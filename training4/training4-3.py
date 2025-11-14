@@ -4,7 +4,7 @@
 
 #Exercici 3: Escriu un programa que llegeixi 10 nombres, quan acabi ha d'indicar si "hi havia almenys un nombre negatiu" o "no hi ha cap nombre negatiu".
 
-print ("Introdueix un nombre. Quan acabis et diré quants d'ells eren negatius.")
+print ("Introdueix deu nombres. Quan acabis et diré quants d'ells eren negatius.")
 
 #CREACIÓ VARIABLES NECESSARIES:
 

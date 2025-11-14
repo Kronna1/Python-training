@@ -18,7 +18,7 @@ from time import sleep# la llibreria "time", que conté la funció / mètode de 
 
 def HelloWorld ():
     print("Hola món! / Hello world!")
-    quit ()
+    #quit () - Comentem el quit() perque aquest tanca Python i no permet que s'executi el loop.
 
 def CalculArea ():
     print ("Introdueix la mida de un costat del quadrat:")
@@ -42,7 +42,7 @@ def CalculArea ():
     print (f"L'àrea del quadrat proposat és {area} unitats quadrades.")
 
     # ^f string, en Python permeten concatenar text i variables de forma més flexible^
-    quit ()
+    #quit ()
 
 def Calculadora ():
     #OBTENCIÓ I CASTING DE L'INPUT 1
@@ -76,7 +76,7 @@ def Calculadora ():
     print(f"Resultat de la divisió dels nombres introduïts: {divisio}")
 
     #FINALITZAR EL PROGRAMA
-    quit ()
+    #quit ()
 
 def ConcatenarParaules ():
     print("Introdueix la primera paraula:")
@@ -97,7 +97,7 @@ def ConcatenarParaules ():
     print(d)
 
     #FINALITZAR EL PROGRAMA
-    quit ()
+    #quit ()
 
 def OperacioDecimal ():
     print("Introdueix el primer nombre decimal a operar (empra un punt com a coma)")
@@ -138,7 +138,7 @@ def OperacioDecimal ():
     print (f"Divisió: {divisio}")
 
     #FINALITZAR EL PROGRAMA
-    quit ()
+    #quit ()
 
 def MajoriaEdat ():
     print ("Introdueix la teva edat")
@@ -153,7 +153,7 @@ def MajoriaEdat ():
         print("Ets menor d'edat")
 
     #FINALITZAR EL PROGRAMA
-    quit ()
+    #quit ()
 
 def NombreMesGran ():
 
@@ -184,7 +184,7 @@ def NombreMesGran ():
         print ("Dos dels nombres introduïts tenen el mateix valor.")
 
     #FINALITZAR EL PROGRAMA
-    quit()
+    #quit()
 
 def PositiuNegatiu (): 
 
@@ -202,7 +202,7 @@ def PositiuNegatiu ():
         print (f"El nombre {int(n)} és negatiu.")
 
     #FINALITZAR EL PROGRAMA
-    quit() 
+    #quit() 
 
 def NombresParells (): 
 
@@ -225,7 +225,7 @@ def NombresParells ():
 
     #FINALITZAR EL PROGRAMA
 
-    quit() #Finalitzem el programa
+    #quit() #Finalitzem el programa
 
 def NotesAlumnes (): 
 
@@ -255,11 +255,11 @@ def NotesAlumnes ():
         print ("No hi ha cap 10") # Imprimirà que "no hi ha cap 10."
 
     #FINALITZAR EL PROGRAMA
-    quit() # Finalitzem el programa
+    #quit() # Finalitzem el programa
 
 def NegatiusConjunt (): 
 
-    print ("Introdueix un nombre. Quan acabis et diré quants d'ells eren negatius.")
+    print ("Introdueix deu nombres. Quan acabis et diré quants d'ells eren negatius.")
 
     #CREACIÓ VARIABLES NECESSARIES:
 
@@ -286,7 +286,7 @@ def NegatiusConjunt ():
 
     #FINALITZAR EL PROGRAMA
 
-    quit() #Finalitzem el programa.
+    #quit() #Finalitzem el programa.
 
 #2. Creació del Menú Principal (Main)
 
@@ -304,11 +304,11 @@ def NegatiusConjunt ():
 
 while True: #Aquest bucle s'executarà sempre.
         
-    tria=input(f"""Tria quina de les següents funcions vols que s'executi:\n
+    print(f"""Tria quina de les següents funcions vols que s'executi:\n
 
     S-Finalitzar el programa \n\n
            
-    "1-Python dient Hello World\n\n
+    1-Python dient Hello World\n\n
            
     2-Calcular l'àrea d'un quadrat\n\n
            
@@ -329,8 +329,11 @@ while True: #Aquest bucle s'executarà sempre.
     10-Hi ha algun 10 entre les notes dels alumnes?\n\n
            
     11-Hi ha algun número negatiu en el conjunt?""")
-
-    tria = tria.upper() #upper força que l'input de l'usuari sempre sigui amb majúscula. Això evita els problemes per input case sensitive. 
+    tria = input().upper().strip() #Demanem input a l'usuari.
+    
+    #upper força que l'input de l'usuari sempre sigui amb majúscula. Això evita els problemes per input case sensitive. 
+    
+    #strip elimina els possibles espais en blanc de l'input, per exemple " 1 " en comptes de "1".
 
     match tria:
 
@@ -381,12 +384,14 @@ while True: #Aquest bucle s'executarà sempre.
         case "S":
 
             print ("Has escollit l'opció de sortida del programa. A continuació es tancarà.")
-            quit()
+            break #Trenquem el bucle, ara executarà el que hi hagi després de while.
             
         case _: #Si l'input no correspon amb cap de les altres opcions definides en el matchcase...
             print("L'opció introduïda no és vàlida.")
-            #print (f"S-Finalitzar el programa\n1-Python dient Hello World\n2-Calcular l'àrea d'un quadrat\n3-Calculadora bàsica\n4-Concatenar 3 paraules\n5-Calculadora d'operacions decimals\n6-Comprovació majoria d'edat\n7-Entre un conjunt de 3 nº, quin és el més gran?\n8-El nombre introduit és positiu o negatiu?\n9-Nombres parells entre 0 i 200\n10-Hi ha algun 10 entre les notes dels alumnes?\n11-Hi ha algun número negatiu en el conjunt?")
-    sleep(3)
+    
+    sleep(3)  #Temps d'espera per reiniciar el loop.
+
+quit() # Si es produeix un break, s'executara quit per tancar el programa.
 
 #3. Control de Flux del Menú
 
