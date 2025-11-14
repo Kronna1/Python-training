@@ -7,7 +7,7 @@ any = int(input())
 divisible4 = any%4
 divisible100 = any%100
 
-if divisible4 or divisible100 == 0:
+if divisible4 == 0 or divisible100 == 0:
     print (f"{any} és un any de traspàs.")
 else:
     print (f"{any} NO és un any de traspàs.")
